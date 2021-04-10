@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const config = require("config")
 const  { check, validationResult } = require("express-validator")
+const authMiddleware = require('../middleware/cors.middleware')
 const router = new Router()
 
 router.post('/registration',
@@ -71,5 +72,20 @@ async (req, res) => {
         res.send({message: "Server error"})
     }
 })
+
+
+
+router.post('/auth', authMiddleware,
+
+async (req, res) => {
+    try{
+      const user = await User.findOne({id: req.user.id})
+
+    }catch (e) {
+        console.log(e)
+        res.send({message: "Server error"})
+    }
+})
+
 
 module.exports = router
