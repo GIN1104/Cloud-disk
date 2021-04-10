@@ -1,14 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Navbar from './navbar/Navbar'
 import './app.css'
 import { BrowserRouter, Route,  Switch } from "react-router-dom"
 import Registration from "./authorization/Registration"
 import Login from './authorization/Login'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import  { auth } from  '../actions/user'
 
 
 function App() {
    const isAuth = useSelector( state => state.user.isAuth )
+   const dispatch = useDispatch()
+
+   useEffect(() => { dispatch(auth()) }, [dispatch])
 
   return (
     <BrowserRouter>
