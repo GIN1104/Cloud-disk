@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react'
 import Navbar from './navbar/Navbar'
 import './app.css'
-import { BrowserRouter, Route,  Switch } from "react-router-dom"
+import { BrowserRouter, Redirect, Route,  Switch } from "react-router-dom"
 import Registration from "./authorization/Registration"
 import Login from './authorization/Login'
 import { useSelector, useDispatch } from 'react-redux'
 import  { auth } from  '../actions/user'
+import Disk from './disk/Disk'
 
 
 function App() {
@@ -19,11 +20,17 @@ function App() {
         <div className='app'>
            <Navbar />
            <div className="warp">
-             {!isAuth && 
-                      <Switch>
-                      <Route path="/registration" component={Registration} />
-                      <Route path="/login" component={Login} />
+             {!isAuth ? 
+                    <Switch>
+                         <Route path="/registration" component={Registration} />
+                         <Route path="/login" component={Login} />
+                         <Redirect to="/login"/>
                     </Switch>
+                    :
+                    <Switch>
+                         <Route exact path="/" component={Disk} />
+                         <Redirect to = "/" />
+                   </Switch>
              }
   
            </div>
