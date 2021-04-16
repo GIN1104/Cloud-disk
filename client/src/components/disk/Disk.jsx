@@ -5,7 +5,7 @@ import FileList from './fileList/FileList'
 import './disk.css'
 
 const Disk = () => {
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
     // const currentDir = useSelector(state => state.files.currentDir)
 
     // useEffect(() => {
