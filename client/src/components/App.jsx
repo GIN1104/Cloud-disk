@@ -10,10 +10,12 @@ import Disk from './disk/Disk'
 
 
 function App() {
-   const isAuth = useSelector( state => state.user.isAuth )
-   const dispatch = useDispatch()
+  const isAuth = useSelector(state => state.user.isAuth)
+  const dispatch = useDispatch()
 
-   useEffect(() => { dispatch(auth()) }, [dispatch])
+  useEffect(() => {
+      dispatch(auth())
+  }, [])
 
   return (
     <BrowserRouter>
