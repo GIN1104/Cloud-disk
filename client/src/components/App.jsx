@@ -15,13 +15,13 @@ function App() {
 
   useEffect(() => {
       dispatch(auth())
-  }, [])
+  }, [dispatch])
 
   return (
     <BrowserRouter>
         <div className='app'>
            <Navbar />
-           <div className="warp">
+           <div className="wrap">
              {!isAuth ? 
                     <Switch>
                          <Route path="/registration" component={Registration} />

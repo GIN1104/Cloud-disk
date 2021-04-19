@@ -11,13 +11,13 @@ const Disk = () => {
 
     useEffect(() => {
         dispatch(getFiles(currentDir))
-    }, [currentDir])
+    }, [currentDir, dispatch])
 
     return (
         <div className="disk">
             <div className="disk__btns">
-                <button className="disk__back">Назад</button>
-                <button className="disk__create">Создать папку</button>
+                <button className="disk__back">Back</button>
+                <button className="disk__create">Create folder</button>
             </div>
             <FileList/>
         </div>
