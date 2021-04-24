@@ -18,6 +18,7 @@ app.use("/api/files", fileRouter)
 const start = async () => {
     try {
         await mongoose.connect(config.get("dbUrl"), {
+            useCreateIndex: true,
             useNewUrlParser:true,
             useUnifiedTopology:true
         })
