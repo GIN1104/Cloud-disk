@@ -22,6 +22,7 @@ class FileService {
 
     deleteFile(file){
         const path = this.getPath(file)
+        console.log(path)
         if(file.type === 'dir'){
             fs.rmdirSync(path)
         }else {
@@ -31,6 +32,7 @@ class FileService {
 
     getPath(file) {
         return `${config.get('filePath')}/${file.user}/${file.path}`
+
     }
 
 }

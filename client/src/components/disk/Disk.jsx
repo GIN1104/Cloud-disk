@@ -26,8 +26,8 @@ const Disk = () => {
        const backDirId = dirStack.pop()
        dispatch(setCurrentDir(backDirId))
     }
-    function fileUploadHandler(event){
-        const files = [ ...event.target.files]
+    function fileUploadHandler(event) {
+        const files = [...event.target.files]
         files.forEach(file => dispatch(uploadFile(file, currentDir)))
     }
     function dragEnterHandler(event) {
@@ -56,7 +56,7 @@ const Disk = () => {
                 <button className="disk__create" onClick={() => showPopupHandler()}>Create folder</button>
                 <div className="disk__upload">
                     <label htmlFor="disk__upload-input" className="disk__upload-lable">Upload file</label>
-                    <input multiple={true} onClick={(event) =>fileUploadHandler(event) } type="file" id="disk__upload-input" className="disk__upload-input" />
+                    <input multiple={true} onChange={(event)=> fileUploadHandler(event)} type="file" id="disk__upload-input" className="disk__upload-input"/>
                 </div>
             </div>
             <FileList/>
