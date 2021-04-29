@@ -1,12 +1,10 @@
-
 import React, {useEffect, useState} from 'react'
 import {useDispatch, useSelector} from "react-redux"
-import { getFiles, uploadFile} from "../../actions/file"
+import {getFiles, uploadFile} from "../../actions/file"
 import FileList from "./fileList/FileList"
 import './disk.css'
 import Popup from './Popup'
-import { setPopupDisplay } from '../../reducers/fileReducer'
-import { setCurrentDir } from "../../reducers/fileReducer"
+import { setFileView, setPopupDisplay, setCurrentDir } from '../../reducers/fileReducer'
 import Uploader from './uploader/Uploader'
 
 const Disk = () => {
@@ -76,6 +74,8 @@ const Disk = () => {
                     <option value="type">By Type</option>  
                     <option value="date ">By Date</option>   
                 </select>
+                <button className="disk__plate"  onClick={() => dispatch(setFileView('plate'))} />
+                <button className="disk__list"  onClick={() => dispatch(setFileView('list'))} />
             </div>
             <FileList/>
             <Popup />
