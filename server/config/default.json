@@ -2,6 +2,7 @@
     "serverPort" : 5000,
     "dbUrl": "mongodb+srv://Evgeny:123456Evgeny@cloud.2herh.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
     "secretKey": "secret-key",
-    "filePath": "/Users/gin/Desktop/MERN-CloudDisk/server/files"
+    "filePath": "/Users/gin/Desktop/MERN-CloudDisk/server/files",
+    "staticPath": "/Users/gin/Desktop/MERN-CloudDisk/server/static"
   
 }
