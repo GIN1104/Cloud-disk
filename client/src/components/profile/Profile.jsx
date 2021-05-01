@@ -12,7 +12,7 @@ const Profile = () => {
     }
     return ( 
         <div className="profile">
-            <button onClick={() => dispatch(deleteAvatar())}> Delete avatar </button>
+            <button className="delete__avatar" onClick={() => dispatch(deleteAvatar())}> Delete avatar </button>
             <input accept="image/*" onChange= {(e) => changeHandler(e)} type="file" placeholder="Upload avatar" />
         </div>
      );
