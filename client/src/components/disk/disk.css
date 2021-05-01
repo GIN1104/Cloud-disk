@@ -7,9 +7,21 @@
   }
   .disk__create {
     margin-left: 10px;
+    border-radius: 5px;
+    background-color:rgb(132, 167, 233);
+    padding: 5px;
+  }
+  .disk__back{
+    border-radius: 5px;
+    background-color:rgb(86, 235, 215);
+    padding: 2px;
+  }
+  .disk__upload{
+      margin-top: 5px
   }
   .disk__upload-input {
       display: none;
+      
   }
   .disk__upload-lable {
       border: 2px dashed #566885;

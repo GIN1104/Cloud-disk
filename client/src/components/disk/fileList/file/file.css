@@ -31,9 +31,11 @@
 .file:hover .file__download {
     grid-column-start: 5;
     display: block;
+    color: green;
 }
 .file:hover .file__delete {
     grid-column-start: 6;
+    color: red;
     display: block;
 }
 .file-plate {
